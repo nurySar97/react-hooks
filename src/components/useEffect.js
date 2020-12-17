@@ -47,7 +47,7 @@ const UseEffect = () => {
 
 
     return (
-        <div className='col-12 bg-dark mt-5 p-4 text-light'>
+        <div className='col-12 rounded bg-dark mt-5 p-4 text-light'>
             <h1>2) useEffect</h1>
             <h1>Resourses: {type}</h1>
             <button className="btn btn-warning mr-3" onClick={() => setType("users")}>Users</button>

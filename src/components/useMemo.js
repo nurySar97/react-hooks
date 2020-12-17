@@ -20,7 +20,7 @@ const UseMemo = () => {
         console.log("Style Changed")
     }, [styles.color])
     return (
-        <div className='col-12 bg-primary mt-5 p-4 text-light'>
+        <div className='col-12 rounded bg-primary mt-5 p-4 text-light'>
             <h1>4) useMemo</h1>
             <h1 style={styles}>Computed Property: {computed}</h1>
             <button className="btn mr-3 btn-success" onClick={() => setNumber(number => number + 1)}>Plus</button>

@@ -4,7 +4,6 @@ import React, { useCallback, useEffect, useState } from 'react'
 
 const ItemsList = ({ getItems }) => {
     const [items, setItems] = useState([]);
-
     useEffect(() => {
         console.log("Items List")
         const newItems = getItems();
@@ -29,7 +28,7 @@ const UseCallback = () => {
     const generateItemsFromAPI = useCallback(() => new Array(count).fill(1).map((_, index) => `Element: ${index + 1}`), [count])
 
     return (
-        <div className='col-12 bg-success p-4 text-light mt-5'>
+        <div className='col-12 rounded bg-success p-4 text-light mt-5'>
             <h1 style={styles}>5) useCallback</h1>
             <h1>Count Of Elements: {count}</h1>
             <button className="btn mr-3 btn-info" onClick={() => setCount(count => count + 1)}>Plus</button>

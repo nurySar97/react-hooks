@@ -17,7 +17,7 @@ const UseRef = () => {
         prevValue.current = value
     }, [value])
     return (
-        <div className='col-12 bg-warning mt-5 p-4 text-light'>
+        <div className='rounded col-12 bg-warning mt-5 p-4 text-light'>
             <h1>3) useRef</h1>
             <h1>Count of Renders {renderCount.current}</h1>
             <h2>Previous Value: {prevValue.current}</h2>
