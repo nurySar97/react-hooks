@@ -1,24 +1,22 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react';
 
 function complexCompute(num) {
     let i = 0;
     while (i < 1000000000) i++
-    return num
+    return num;
 }
 
-
-
 const UseMemo = () => {
-    const [number, setNumber] = useState(42)
-    const [colored, setColored] = useState(true)
-
-    const computed = useMemo(() => complexCompute(number), [number])
-    // const styles = useMemo(() => ({ color: colored ? "red" : "black" }), [colored])
-    const styles = { color: colored ? "red" : "black" }
+    const [number, setNumber] = useState(42);
+    const [colored, setColored] = useState(true);
+    // Caches
+    const computed = useMemo(() => complexCompute(number), [number]);
+    const styles = useMemo(() => ({ color: colored ? "red" : "black" }), [colored]);
 
     useEffect(() => {
-        console.log("Style Changed")
-    }, [styles.color])
+        console.log("Style Changed");
+    }, [styles]);
+
     return (
         <div className='col-12 rounded bg-primary mt-5 p-4 text-light'>
             <h1>4) useMemo</h1>
@@ -30,4 +28,4 @@ const UseMemo = () => {
     )
 }
 
-export default UseMemo
+export default UseMemo;

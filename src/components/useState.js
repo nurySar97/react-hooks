@@ -1,36 +1,31 @@
 import React, { useState } from 'react'
 
-
 let computeInitialCounter = () => {
-    console.log("Computed")
-    return Math.trunc(Math.random() * 20)
-}
-
+    console.log("Computed");
+    return Math.trunc(Math.random() * 20);
+};
 
 const UseState = () => {
-    // const [count, setCount] = useState(computeInitialCounter())
     const [count, setCount] = useState(computeInitialCounter);
 
     let [state, setState] = useState({
         title: "Counter",
         date: Date.now()
-    })
+    });
 
     let increment = () => {
-        // setCount(count + 1)
-        // setCount(count + 1)
-
-        setCount(count => count + 1)
-        setCount(count => count + 1)
-    }
+        setCount(count => count + 1);
+        setCount(count => count + 1);
+    };
 
     let decrement = () => {
         setCount(count - 1)
-    }
+    };
 
     let updateTitle = () => {
         setState(state => ({ ...state, title: `Counter:${count}` }))
-    }
+    };
+
     return (
         <div className='col-12 border-radius-2 bg-danger rounded text-light mt-5 p-4'>
             <h1>1) useState</h1>
