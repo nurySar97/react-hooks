@@ -1,42 +1,48 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-let computeInitialCounter = () => {
-    console.log("Computed");
-    return Math.trunc(Math.random() * 20);
+const computeInitialCounter = () => {
+  console.log("Computed");
+  return Math.trunc(Math.random() * 20);
 };
 
 const UseState = () => {
-    const [count, setCount] = useState(computeInitialCounter);
+  const [count, setCount] = useState(computeInitialCounter);
 
-    let [state, setState] = useState({
-        title: "Counter",
-        date: Date.now()
-    });
+  const [state, setState] = useState({
+    title: "Counter",
+    date: Date.now(),
+  });
 
-    let increment = () => {
-        setCount(count => count + 1);
-        setCount(count => count + 1);
-    };
+  const increment = () => {
+    setCount((count) => count + 1);
+    setCount((count) => count + 1);
+  };
 
-    let decrement = () => {
-        setCount(count - 1)
-    };
+  const decrement = () => {
+    setCount(count - 1);
+  };
 
-    let updateTitle = () => {
-        setState(state => ({ ...state, title: `Counter:${count}` }))
-    };
+  const updateTitle = () => {
+    setState((state) => ({ ...state, title: `Counter:${count}` }));
+  };
 
-    return (
-        <div className='col-12 border-radius-2 bg-danger rounded text-light mt-5 p-4'>
-            <h1>1) useState</h1>
-            <h1 className="text-light">Counter: {count}</h1>
-            <button onClick={increment} className='btn btn-success mr-3'>Plus</button>
-            <button onClick={decrement} className='btn btn-dark mr-3'>Minus</button>
+  return (
+    <section className="col-12 border-radius-2 rounded mt-5 p-3 text-light bg-danger">
+      <h1>useState</h1>
+      <h2 className="text-light">counter: {count}</h2>
+      <button onClick={increment} className="btn btn-success mr-3">
+        plus
+      </button>
+      <button onClick={decrement} className="btn btn-dark mr-3">
+        minus
+      </button>
 
-            <button onClick={updateTitle} className='btn btn-secondary'>Change Title</button>
-            <pre className='pt-3 text-light h3'>{JSON.stringify(state, null, 2)}</pre>
-        </div>
-    )
-}
+      <button onClick={updateTitle} className="btn btn-secondary">
+        change title
+      </button>
+      <pre className="pt-3 text-light h3">{JSON.stringify(state, null, 2)}</pre>
+    </section>
+  );
+};
 
-export default UseState
+export default UseState;
