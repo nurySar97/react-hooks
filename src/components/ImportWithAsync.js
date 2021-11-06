@@ -8,7 +8,7 @@ const paths = [
   "useContext",
   "useReducer",
   "useMedia",
-  'useScreenSize'
+  "useScreenSize",
 ];
 
 const Default = () => {
@@ -25,7 +25,8 @@ const Default = () => {
       });
     };
     paths.length !== Components.length && fetch();
-  }, []);
+  }, [Components.length]);
+
   return (
     <div className="container p-3">
       <div className="row">
