@@ -15,7 +15,7 @@ const Default = () => {
   const [Components, setComponent] = useState([]);
 
   useEffect(() => {
-    const fetch = async () => {
+    void (async function () {
       paths.forEach((path, index) => {
         setTimeout(async () => {
           const response = await import(`./${path}`);
@@ -23,9 +23,8 @@ const Default = () => {
           setComponent((prev) => [...prev, <Component key={index} />]);
         }, (index + 1) * 1000);
       });
-    };
-    paths.length !== Components.length && fetch();
-  }, [Components.length]);
+    })();
+  }, []);
 
   return (
     <div className="container p-3">
